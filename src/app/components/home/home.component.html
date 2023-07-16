@@ -1,0 +1,32 @@
+<!-- <button mat-raised-button color="primary"  (click)='getData()'>getData</button>
+<button mat-raised-button color="primary"  (click)='getPostData()'>getPostData</button> -->
+
+<div class="panel">
+    <mat-table #table [dataSource]="dataSource" class="tableStyle">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="taskName">
+            <mat-header-cell *matHeaderCellDef class="darkfonts"> Name </mat-header-cell>
+            <mat-cell *matCellDef="let taskData" class="darkfonts" (click)="ShowTask(taskData.taskName)"> {{taskData.taskName}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="taskType">
+            <mat-header-cell *matHeaderCellDef class="darkfonts"> Type </mat-header-cell>
+            <mat-cell *matCellDef="let taskData" class="darkfonts"> {{taskData.taskType}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="taskInput">
+            <mat-header-cell *matHeaderCellDef class="darkfonts"> Input </mat-header-cell>
+            <mat-cell *matCellDef="let taskData" class="darkfonts"> {{taskData.taskInput}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef class="darkfonts"> Status </mat-header-cell>
+            <mat-cell *matCellDef="let taskData" class="darkfonts"> {{taskData.status}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns" class="darkfonts"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" class="darkfonts"></mat-row>
+    </mat-table>
+
+
+
+    <button mat-raised-button class="marginRight marginTop" color="primary" (click)='RunTasks()'>Run Tasks</button>
+    <button mat-raised-button class="marginTop" color="primary" (click)='AddTask()'>Add Task</button>
+</div>

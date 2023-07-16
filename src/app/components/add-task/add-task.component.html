@@ -1,0 +1,18 @@
+<div class="panel">
+    <form>
+        <p class="margin width">Task Name:</p>
+        <input class="margin width" type="text" mat-input [(ngModel)]="taskName" name="name" />
+        <br />
+        <p class="margin width">Task Type:</p>
+        <select class="margin width" [(ngModel)]="taskType" name="type" type="number">
+            <option value="1">Calculate</option>
+            <option value="2">Permuta</option>
+        </select>
+        <br />
+        <p class="margin width">Task Input:</p>
+        <input class="margin width" type="text" mat-input [(ngModel)]="taskInput" name="input"/>
+        <br />
+        <button class="margin marginButton width" mat-raised-button color="primary" (click)='AddTask()'>Add Task</button>
+        <button class="margin width" mat-raised-button color="primary" (click)='Clear()'>Cancel</button>
+    </form>
+</div>
